@@ -34,22 +34,22 @@ Before running the application make sure that port 8080 is open and not already 
 docker: Error response from daemon: driver failed programming external connectivity on endpoint hopeful_villani (c88b36d49b0ea68237f20942b936905b84c3f3b339652c1d5aece25068d33a2d): Bind for 0.0.0.0:8080 failed: port is already allocated.
 
 1. Create Account
-```bash
-curl -i -X POST \
--H "Content-Type:application/json" \
--d \
-'{
-"document_number":"123456788"
-}' \
-'http://localhost:8080/accounts'
-```
+   ```bash
+   curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -d \
+   '{
+   "document_number":"123456788"
+   }' \
+   'http://localhost:8080/accounts'
+   ```
 2. Get Account
    ```bash
    curl -i -X GET \
    'http://localhost:8080/accounts/1'
    ```
 3. Create Transaction
-   ```bash   ```bash
+   ```bash
    curl -i -X POST \
    -H "Content-Type:application/json" \
    -d \
