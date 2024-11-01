@@ -12,18 +12,21 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Transaction_ID")
     private Long transactionId;
 
     @ManyToOne
-    @JoinColumn(name = "accountId", nullable = false)
+    @JoinColumn(name = "Account_ID", nullable = false)
     private Account account;
 
     @ManyToOne
-    @JoinColumn(name = "operationTypeId", nullable = false)
+    @JoinColumn(name = "Operationtype_ID", nullable = false)
     private OperationType operationType;
 
+    @Column(name="Amount")
     private BigDecimal amount;
 
+    @Column(name="EventDate")
     private LocalDateTime eventDate = LocalDateTime.now();
 
 }

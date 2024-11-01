@@ -1,18 +1,17 @@
 package com.app.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.validator.constraints.UniqueElements;
 
 @Entity
 @Data
 public class Account {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Account_ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long accountId;
-
+    @Column(name="Document_Number",unique = true, nullable = false)
     private String documentNumber;
 }
