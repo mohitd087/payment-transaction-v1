@@ -3,9 +3,7 @@
 # Transaction Service
 
 ## Requirements
-- Maven
 - Docker
-- Java 17
 
 ## Endpoints
 1. `POST /accounts`: Creates a new account.

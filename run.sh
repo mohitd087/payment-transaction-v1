@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# Step 1: Clean and build the project using Maven
-echo "Building the project with Maven..."
-mvn clean install
-
-# Step 2: Build the Docker image
-echo "Building Docker image..."
+# Step 1: Build the Docker image (which will build, test, and package the application)
+echo "Building, testing, and packaging the Docker image..."
 docker build -t transaction-service:latest .
 
-# Step 3: Run the Docker container
-echo "Running the Docker container..."
+# Step 2: Run the Docker container
+echo "Running the Docker container on port 8080..."
 docker run -p 8080:8080 transaction-service:latest
